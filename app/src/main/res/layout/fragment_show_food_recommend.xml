@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".homeapp.fragmentmainapp.ShowFoodRecommend">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_backShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".02" />
+
+        <ImageView
+            android:id="@+id/img_ShareShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_bx_share_alt_1"
+            app:layout_constraintBottom_toBottomOf="@+id/img_backShowFood"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_backShowFood" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_ShowFood"
+            android:layout_width="220dp"
+            android:layout_height="200dp"
+            android:src="@drawable/asiafood1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_backShowFood"
+            app:layout_constraintVertical_bias=".02" />
+
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="4.8"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_ShowFood"
+            app:layout_constraintVertical_bias=".05" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing=".02"
+            android:text="Rating"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_rating"
+            app:layout_constraintHorizontal_bias=".1"
+            app:layout_constraintStart_toStartOf="@+id/tv_rating"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rating"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/tv_PriceShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="$5.5"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_ShowFood"
+            app:layout_constraintVertical_bias=".05" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing=".02"
+            android:text="Price"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_PriceShowFood"
+            app:layout_constraintHorizontal_bias=".52"
+            app:layout_constraintStart_toStartOf="@+id/tv_PriceShowFood"
+            app:layout_constraintTop_toBottomOf="@+id/tv_PriceShowFood"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/img_LikeShowFood"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintBottom_toBottomOf="@id/tv_rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_rating"
+            app:layout_constraintVertical_bias=".05" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing=".02"
+            android:text="Like"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="@id/img_LikeShowFood"
+            app:layout_constraintStart_toStartOf="@id/img_LikeShowFood"
+            app:layout_constraintTop_toBottomOf="@+id/tv_PriceShowFood"
+            app:layout_constraintVertical_bias=".01" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_dot" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_line" />
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_dot" />
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_dot" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_typeShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helveticaneue_light"
+            android:letterSpacing=".1"
+            android:text="VEGETARIANS FOODS"
+            android:textColor="#F4511E"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".1"
+            app:layout_constraintStart_toStartOf="@id/img_backShowFood"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias=".1" />
+
+        <TextView
+            android:id="@+id/tv_NameShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:letterSpacing=".1"
+            android:text="Bánh trôi nước "
+            android:textColor="@color/colorBlackShadow"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/tv_typeShowFood"
+            app:layout_constraintTop_toBottomOf="@+id/tv_typeShowFood"
+            app:layout_constraintVertical_bias=".015" />
+
+        <ImageView
+            android:id="@+id/img_TagFreeShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tagfree"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/img_ShareShowFood"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/tv_typeShowFood"
+            app:layout_constraintTop_toTopOf="@id/tv_typeShowFood"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_DescriptionShowFood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:letterSpacing=".1"
+            android:maxLines="6"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/img_TagFreeShowFood"
+            app:layout_constraintHorizontal_bias=".1"
+            app:layout_constraintStart_toStartOf="@+id/tv_NameShowFood"
+            app:layout_constraintTop_toBottomOf="@+id/img_TagFreeShowFood"
+            app:layout_constraintVertical_bias=".05" />
+
+        <ImageView
+            android:id="@+id/img_minusShowFood"
+            android:src="@drawable/ic_group_400"
+            android:elevation="15dp"
+            android:scaleType="centerCrop"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/tv_DescriptionShowFood"
+            app:layout_constraintTop_toBottomOf="@+id/tv_DescriptionShowFood"
+            app:layout_constraintVertical_bias="0.13" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="01"
+            android:textColor="#55586B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_minusShowFood"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".03"
+            app:layout_constraintStart_toEndOf="@id/img_minusShowFood"
+            app:layout_constraintTop_toTopOf="@+id/img_minusShowFood" />
+
+        <ImageView
+            android:id="@+id/img_plusShowFood"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:elevation="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_group_401"
+            app:layout_constraintBottom_toBottomOf="@id/img_minusShowFood"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".03"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toTopOf="@id/img_minusShowFood"
+         />
+
+        <TextView
+            android:id="@+id/tv_SumPriceShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="$5.5"
+            android:textColor="#55586B"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_plusShowFood"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintStart_toEndOf="@id/img_plusShowFood"
+            app:layout_constraintTop_toTopOf="@+id/img_plusShowFood"
+            app:layout_constraintVertical_bias="0.538" />
+
+        <ImageView
+            android:id="@+id/img_AddCartShowFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_group_1675"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

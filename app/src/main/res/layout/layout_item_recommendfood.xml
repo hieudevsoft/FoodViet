@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:elevation="15dp"
+    app:cardCornerRadius="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainCardFoodRecommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_foodrecom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/img_FoodRecommend"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/asiafood1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_nameFoodRecommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/lato_regular"
+            android:maxLength="20"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Bánh trôi nước"
+            android:textColor="@color/colorBackGroundWorld"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/tv_priceFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/helveticaneue_light"
+            android:text="$ 6.05"
+            android:textColor="#FB8C00"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_nameFoodRecommend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".4"
+            app:layout_constraintStart_toEndOf="@id/tv_nameFoodRecommend"
+            app:layout_constraintTop_toTopOf="@id/tv_nameFoodRecommend" />
+
+        <ImageView
+            android:id="@+id/img_LikeFoodRecommend"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".5"
+            app:layout_constraintStart_toEndOf="@id/tv_nameFoodRecommend"
+            app:layout_constraintTop_toBottomOf="@id/tv_priceFood" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ranting_FoodRecommend"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:progressTint="@color/colorYellow"
+            android:rating="3.5"
+            app:layout_constraintBottom_toTopOf="@id/tv_nameFoodRecommend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+        <ImageView
+            android:id="@+id/img_FreeShip"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/tagfree"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".92"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

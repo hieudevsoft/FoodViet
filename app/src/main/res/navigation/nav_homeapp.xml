@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_homeapp"
+    app:startDestination="@id/fragmentHomeApp">
+
+    <fragment
+        android:id="@+id/fragmentHomeApp"
+        android:name="com.toturials.foodviet.homeapp.fragmentmainapp.FragmentHomeApp"
+        android:label="FragmentHomeApp" >
+        <action
+            android:id="@+id/action_fragmentHomeApp_to_showFoodRecommend"
+            app:destination="@id/showFoodRecommend"
+            app:enterAnim="@anim/anim_food"
+            app:exitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFoodRecommend"
+        android:name="com.toturials.foodviet.homeapp.fragmentmainapp.ShowFoodRecommend"
+        android:label="fragment_show_food_recommend"
+        tools:layout="@layout/fragment_show_food_recommend" >
+        <argument
+            android:name="Food"
+            app:argType="com.toturials.foodviet.entity.Food"
+            app:nullable="false"
+           />
+        <action
+            android:id="@+id/action_showFoodRecommend_to_fragmentHomeApp"
+            app:destination="@id/fragmentHomeApp"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+</navigation>
