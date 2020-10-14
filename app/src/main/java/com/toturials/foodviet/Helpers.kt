@@ -1,19 +1,21 @@
 package com.toturials.foodviet
 
-import android.R.attr
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
+import android.util.Log
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.toturials.foodviet.entity.Food
+import com.toturials.foodviet.entity.TypeFood
 import java.io.File
-import java.io.FileNotFoundException
 import java.io.FileOutputStream
-import java.io.IOException
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 object Helpers {
@@ -99,5 +101,34 @@ object Helpers {
          intent.type = "image/png"
          context.startActivity(Intent.createChooser(intent, "Share With"))
     }
-
+    val listTypeFood = listOf<TypeFood>(
+        TypeFood(R.drawable.all_food,"All",false),
+        TypeFood(R.drawable.food,"Food",false),
+        TypeFood(R.drawable.drinks,"Drinks",false),
+        TypeFood(R.drawable.vegetarian_food,"Vegetarian food",false),
+        TypeFood(R.drawable.cake,"Cake",false),
+        TypeFood(R.drawable.dessert,"Dessert",false),
+        TypeFood(R.drawable.homemade,"Homemade",false),
+        TypeFood(R.drawable.pavement_food,"Pavement food",false),
+        TypeFood(R.drawable.pizza,"Pizza/Burger",false),
+        TypeFood(R.drawable.chicken_food,"Chicken food",false),
+        TypeFood(R.drawable.pot,"Pot",false),
+        TypeFood(R.drawable.sushi,"Sushi",false),
+        TypeFood(R.drawable.noodles,"Noodles",false),
+        TypeFood(R.drawable.lunch_box,"Lunch box",false)
+    )
+    fun clickItemTypeFood(type:String,listTypeFood:List<TypeFood>) {
+        Log.d("debug", "clickItemTypeFood: ${listTypeFood.size}")
+        for (item in listTypeFood)
+        {
+            item.isActived = item.type==type
+            Log.d("debug", "clickItemTypeFood: ${item.isActived} ${item.type}")
+        }
+    }
+    fun filterFoodByType(type:String, listFood: ArrayList<Food>):ArrayList<Food> {
+        val listFoodResult = ArrayList<Food>()
+        for (item in listFood)
+            if(item.type?.toLowerCase(Locale.ROOT)==type.toLowerCase(Locale.ROOT)) listFoodResult.add(item)
+        return listFoodResult
+    }
 }

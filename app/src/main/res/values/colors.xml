@@ -11,5 +11,6 @@
     <color name="colorBlackShadow">#373B3E</color>
     <color name="colorDarkGray">#ABABAB</color>
     <color name="colorBackGroundWorld">#242365</color>
-    <color name="colorBottomAppBar">#F8F1F1</color>
+    <color name="colorRed">#A1FF0000</color>
+    <color name="colorRedShadow">#7CFF0000</color>
 </resources>

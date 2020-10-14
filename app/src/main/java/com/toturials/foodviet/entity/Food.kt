@@ -9,7 +9,8 @@ data class Food(
     var nameFood: String?, var priceFood: Double, var numberRating: Float, var isLike: Boolean,
     var isFreeShip: Boolean,
     var description: String?,
-    var type: String?
+    var type: String?,
+    var restaurant:String?
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readParcelable(Bitmap::class.java.classLoader),
@@ -18,6 +19,7 @@ data class Food(
         parcel.readFloat(),
         parcel.readByte() != 0.toByte(),
         parcel.readByte() != 0.toByte(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString()
     ) {

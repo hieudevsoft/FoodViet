@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.layout_item_recommendfood.view.*
 class FoodRecommendAdapter(context: Context, listFoodRecommend: List<Food>) : RecyclerView.Adapter<FoodRecommendAdapter.MyViewHolder>() {
     lateinit var context: Context
     lateinit var listFoodRecommend: List<Food>
-    var lastPosition =-1
     init {
         this.context = context
         this.listFoodRecommend = listFoodRecommend
@@ -28,6 +27,7 @@ class FoodRecommendAdapter(context: Context, listFoodRecommend: List<Food>) : Re
 
         fun setData(food: Food)
         {
+            setAnimation(itemView.mainCardFoodRecommend)
             itemView.img_FoodRecommend.setImageBitmap(food.imageFood)
             if(food.isLike) itemView.img_LikeFoodRecommend.setImageResource(R.drawable.ic_heart_actived) else
                 itemView.img_LikeFoodRecommend.setImageResource(R.drawable.ic_heart)
@@ -53,7 +53,6 @@ class FoodRecommendAdapter(context: Context, listFoodRecommend: List<Food>) : Re
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = listFoodRecommend[position]
-        setAnimation(holder.itemView.mainCardFoodRecommend,position)
         holder.setData(item)
         holder.itemView.img_LikeFoodRecommend.setOnClickListener {
             item.isLike=!item.isLike
@@ -64,12 +63,10 @@ class FoodRecommendAdapter(context: Context, listFoodRecommend: List<Food>) : Re
             Navigation.findNavController(holder.itemView).navigate(action)
         }
     }
-    private fun setAnimation(viewToAnimate: View, position: Int) {
+    private fun setAnimation(viewToAnimate: View) {
         // If the bound view wasn't previously displayed on screen, it's animated
-        if (position > lastPosition) {
             val animation = AnimationUtils.loadAnimation(context, R.anim.anim_food)
             viewToAnimate.startAnimation(animation)
-            lastPosition = position
-        }
+
     }
 }
