@@ -28,6 +28,15 @@ class FragmentOnBoarding3 : Fragment() {
                 )
             }
         }
+        view.textView4.setOnClickListener {
+            Intent(requireContext(), Login::class.java).also {
+                startActivity(it)
+                requireActivity().overridePendingTransition(
+                    R.anim.anim_slide_left_to_right,
+                    R.anim.anim_slide_right_to_left
+                )
+            }
+        }
         return view
     }
 }

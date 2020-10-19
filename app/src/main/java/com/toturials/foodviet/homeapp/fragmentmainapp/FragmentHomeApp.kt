@@ -1,5 +1,6 @@
 package com.toturials.foodviet.homeapp.fragmentmainapp
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
@@ -7,9 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import coil.Coil
+import coil.load
+import com.bumptech.glide.Glide
+import com.facebook.login.Login
+import com.facebook.login.LoginManager
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.toturials.foodviet.Helpers
 import com.toturials.foodviet.R
 import com.toturials.foodviet.adapter.FoodRecommendAdapter
@@ -31,6 +43,8 @@ class FragmentHomeApp() : Fragment(), TypeFoodAdapter.OnClickItemListener {
     lateinit var foodViewModel: FoodViewModel
     lateinit var typeFoodAdapter: TypeFoodAdapter
     lateinit var showFoodByTypeAdapter: ShowFoodByTypeAdapter
+    lateinit var googleSignInClient: GoogleSignInClient
+    final val TAG = "FragmentHomeApp"
     val des =
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
 
@@ -49,14 +63,40 @@ class FragmentHomeApp() : Fragment(), TypeFoodAdapter.OnClickItemListener {
         initComponents()
         super.onViewCreated(view, savedInstanceState)
     }
-
     private fun initComponents() {
         initFoodRecommend()
         initTypeFood()
         initShowFoodByType()
         operationsCart()
+        activity?.intent?.let {
+            view?.img_Avatar?.let { it1 ->
+                Log.d(TAG, "initComponents: ${it.getStringExtra("photoURI")}")
+                Glide
+                    .with(this)
+                    .load(it.getStringExtra("photoURI"))
+                    .centerCrop()
+                    .placeholder(R.drawable.blank_avatar)
+                    .into(it1)
+            };
+        }
+        view?.img_Avatar?.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            LoginManager.getInstance().logOut()
+            logoutGoogle()
+            requireActivity().finish()
+        }
     }
+    private fun logoutGoogle() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
 
+        googleSignInClient = GoogleSignIn.getClient(requireContext(),gso)
+        googleSignInClient?.let {
+            googleSignInClient.signOut()
+        }
+    }
     private fun operationsCart() {
         foodViewModel = ViewModelProvider(this).get(FoodViewModel::class.java)
         foodViewModel.readNumberOfOrder.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
@@ -75,8 +115,6 @@ class FragmentHomeApp() : Fragment(), TypeFoodAdapter.OnClickItemListener {
             tv_NumberOfOrder.visibility = View.INVISIBLE
         }
     }
-
-
     private fun initFoodRecommend() {
         listFood = ArrayList()
         listFood.add(
@@ -183,7 +221,6 @@ class FragmentHomeApp() : Fragment(), TypeFoodAdapter.OnClickItemListener {
         val layout = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         view?.recyclerViewRecommendFood?.layoutManager = layout
     }
-
     private fun initTypeFood() {
         listTypeFood = ArrayList()
         listTypeFood.addAll(Helpers.listTypeFood)
@@ -192,7 +229,6 @@ class FragmentHomeApp() : Fragment(), TypeFoodAdapter.OnClickItemListener {
         val layout = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         view?.recyclerViewChooseTypeFood?.layoutManager = layout
     }
-
     private fun initShowFoodByType() {
         listShowFoodByType = ArrayList()
         showFoodByTypeAdapter = ShowFoodByTypeAdapter(requireContext(), listShowFoodByType)
@@ -200,7 +236,6 @@ class FragmentHomeApp() : Fragment(), TypeFoodAdapter.OnClickItemListener {
         val layout = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         view?.recyclerViewShowChooseTypeFood?.layoutManager = layout
     }
-
     override fun click(type: String) {
         Helpers.clickItemTypeFood(type, listTypeFood)
         listShowFoodByType.clear()

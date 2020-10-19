@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "431812298874",
+    "firebase_url": "https://foodviet-bb42e.firebaseio.com",
+    "project_id": "foodviet-bb42e",
+    "storage_bucket": "foodviet-bb42e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431812298874:android:846eef81837623a8c413c3",
+        "android_client_info": {
+          "package_name": "com.toturials.foodviet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431812298874-9tae05p8d91hmnbs56moenbbmq61gh6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5rSOYgaTH7Wc5E0TbRlPiXJLJXONWYlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431812298874-9tae05p8d91hmnbs56moenbbmq61gh6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

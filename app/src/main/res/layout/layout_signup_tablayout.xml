@@ -14,7 +14,7 @@
         android:drawablePadding="10dp"
         android:fontFamily="@font/helveticaneue_light"
         android:hint="Email"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         android:paddingTop="15dp"
         android:paddingEnd="10dp"
@@ -87,7 +87,7 @@
         android:drawablePadding="10dp"
         android:fontFamily="@font/helveticaneue_light"
         android:hint="Phone Number"
-        android:inputType="textPassword"
+        android:inputType="phone"
         android:paddingStart="10dp"
         android:paddingTop="15dp"
         android:paddingEnd="10dp"
@@ -120,5 +120,4 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_PhoneSignUp"
         app:layout_constraintVertical_bias=".7"
         app:layout_constraintWidth_percent=".8" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

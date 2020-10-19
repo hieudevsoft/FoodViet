@@ -1,13 +1,19 @@
 package com.toturials.foodviet
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.util.Log
+import android.view.Gravity
 import android.view.View
+import android.view.Window
 import android.view.animation.AnimationUtils
+import android.widget.LinearLayout
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.toturials.foodviet.entity.Food
@@ -15,6 +21,8 @@ import com.toturials.foodviet.entity.TypeFood
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 import kotlin.collections.ArrayList
 
 
@@ -130,5 +138,21 @@ object Helpers {
         for (item in listFood)
             if(item.type?.toLowerCase(Locale.ROOT)==type.toLowerCase(Locale.ROOT)) listFoodResult.add(item)
         return listFoodResult
+    }
+    fun isValidEmail(email:String):Boolean{
+        val pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE)
+        return pattern.matcher(email).matches()
+    }
+    fun DialogLoading(context: Context):Dialog
+    {
+        val dialog = Dialog(context)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.layout_loading)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.setCancelable(true)
+        dialog.window?.setGravity(Gravity.CENTER)
+        dialog.window?.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        return dialog
     }
 }
