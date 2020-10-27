@@ -13,4 +13,5 @@
     <color name="colorBackGroundWorld">#242365</color>
     <color name="colorRed">#A1FF0000</color>
     <color name="colorRedShadow">#7CFF0000</color>
+    <color name="colorProfileEditTextColor">#707070</color>
 </resources>

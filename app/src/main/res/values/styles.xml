@@ -11,5 +11,86 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
+    
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopUpOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="baseStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="viewParent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="profileDetailsLayout" parent="baseStyle">
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="imagesProfileDetails">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:contentDescription">No</item>
+    </style>
+
+    <style name="textMainDetailsProfiles" parent="viewParent">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBlackShadow</item>
+    </style>
+
+    <style name="proifleDetailsView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+
+    <style name="editTextMiniDetailsProfile" parent="baseStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">@color/colorBlackShadow</item>
+    </style>
+
+
+    <style name="headerText" parent="baseStyle">
+        <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:textColor">@color/colorBlackShadow</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttonCustomStyle" parent="viewParent">
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">.1</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/helveticaneue_light</item>
+        <item name="android:textColor">@color/colorWhiteText</item>
+        <item name="android:paddingStart">50dp</item>
+        <item name="android:paddingEnd">50dp</item>
+        <item name="android:background">@drawable/custom_login_button</item>
+    </style>
+
+    <style name="profileStyledBackButton">
+        <item name="android:textColor">@color/colorWhiteText</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/helveticaneue_light</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/profile_back_button</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">50dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:drawableLeft">@drawable/back_to_home_button</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:minWidth">250dp</item>
+    </style>
 
 </resources>

@@ -29,6 +29,7 @@ import com.toturials.foodviet.adapter.ShowFoodByTypeAdapter
 import com.toturials.foodviet.adapter.TypeFoodAdapter
 import com.toturials.foodviet.entity.Food
 import com.toturials.foodviet.entity.TypeFood
+import com.toturials.foodviet.homeapp.Profile
 import com.toturials.foodviet.preferences.FoodViewModel
 import kotlinx.android.synthetic.main.layout_homefoodviet.*
 import kotlinx.android.synthetic.main.layout_homefoodviet.view.*
@@ -79,11 +80,18 @@ class FragmentHomeApp() : Fragment(), TypeFoodAdapter.OnClickItemListener {
                     .into(it1)
             };
         }
-        view?.img_Avatar?.setOnClickListener {
+        view?.img_Avatar?.setOnLongClickListener {
             FirebaseAuth.getInstance().signOut()
             LoginManager.getInstance().logOut()
             logoutGoogle()
             requireActivity().finish()
+            true
+        }
+
+        view?.img_Avatar?.setOnClickListener {
+            Intent(requireContext(),Profile::class.java).also {
+                startActivity(it)
+            }
         }
     }
     private fun logoutGoogle() {

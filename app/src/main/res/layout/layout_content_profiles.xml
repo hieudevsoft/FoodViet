@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/layout_profile"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/headerText"
+            android:text="Account Infor"
+            />
+        <RelativeLayout
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/img_NameInfor"
+                style="@style/imagesProfileDetails"
+                android:src="@drawable/ic_name"
+                />
+            <TextView
+                android:id="@+id/tv_NameInfor"
+                style="@style/textMainDetailsProfiles"
+                android:layout_toEndOf="@id/img_NameInfor"
+                android:text="Name"/>
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_below="@id/tv_NameInfor"
+                android:layout_toEndOf="@id/img_NameInfor"
+                style="@style/editTextMiniDetailsProfile"/>
+        </RelativeLayout>
+        <View style="@style/proifleDetailsView"/>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/img_MobileInfor"
+                style="@style/imagesProfileDetails"
+                android:src="@drawable/ic_mobile"
+                />
+            <TextView
+                android:id="@+id/tv_MobileInfor"
+                style="@style/textMainDetailsProfiles"
+                android:layout_toEndOf="@id/img_MobileInfor"
+                android:text="Mobile"/>
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_below="@id/tv_MobileInfor"
+                android:layout_toEndOf="@id/img_MobileInfor"
+                style="@style/editTextMiniDetailsProfile"/>
+        </RelativeLayout>
+        <View style="@style/proifleDetailsView"/>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/img_EmailInfor"
+                style="@style/imagesProfileDetails"
+                android:src="@drawable/ic_email"
+                />
+            <TextView
+                android:id="@+id/tv_EmailInfor"
+                style="@style/textMainDetailsProfiles"
+                android:layout_toEndOf="@id/img_EmailInfor"
+                android:text="Email"/>
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_below="@id/tv_EmailInfor"
+                android:layout_toEndOf="@id/img_EmailInfor"
+                style="@style/editTextMiniDetailsProfile"/>
+        </RelativeLayout>
+        <View style="@style/proifleDetailsView"/>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/img_AddressInfor"
+                style="@style/imagesProfileDetails"
+                android:src="@drawable/ic_address"
+                />
+            <TextView
+                android:id="@+id/tv_AddressInfor"
+                style="@style/textMainDetailsProfiles"
+                android:layout_toEndOf="@id/img_AddressInfor"
+                android:text="Address"/>
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_below="@id/tv_AddressInfor"
+                android:layout_toEndOf="@id/img_AddressInfor"
+                style="@style/editTextMiniDetailsProfile"/>
+        </RelativeLayout>
+        <View style="@style/proifleDetailsView"/>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/img_DobInfor"
+                style="@style/imagesProfileDetails"
+                android:src="@drawable/ic_dob"
+                />
+            <TextView
+                android:id="@+id/tv_DobInfor"
+                style="@style/textMainDetailsProfiles"
+                android:layout_toEndOf="@id/img_DobInfor"
+                android:text="D.O.B"/>
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_below="@id/tv_DobInfor"
+                android:layout_toEndOf="@id/img_DobInfor"
+                style="@style/editTextMiniDetailsProfile"/>
+        </RelativeLayout>
+        <View style="@style/proifleDetailsView"/>
+
+        <Button
+            android:id="@+id/btn_UpdateProfile"
+            style="@style/buttonCustomStyle"
+            android:text="Update"
+            android:layout_gravity="center_horizontal"
+           />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
